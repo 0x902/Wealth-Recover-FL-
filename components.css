@@ -1,0 +1,83 @@
+.block {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.selected {
+    font-weight: 600;
+    opacity: 1;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: 500;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+
+.btn, button {
+    border: none;
+    outline: none;
+    width: max-content;
+    display: inline-block;
+    padding: 18px 30px;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 10px;
+}
+
+.btn.btn-primary {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.btn.btn-secondary {
+    background-color: white;
+    color: var(--primary-color);
+    outline: 2px solid var(--primary-color);
+    border-left: 8px solid var(--secondary-color);
+}
+
+input, textarea {
+    outline: none;
+    border: none;
+    padding: 14px 0;
+    font-size: 18px;
+    font-family: inherit;
+    border-bottom: 2px solid var(--light);
+}
+
+textarea {
+    border-bottom: 1px solid var(--light);
+    padding: 18px 0;
+    resize: none;
+}
+
+input:focus, textarea:focus {
+    border-bottom: 2px solid black;
+}
+
+section {
+    margin-bottom: 100px;
+}
+
+.required {
+    color: crimson;
+}
