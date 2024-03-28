@@ -235,6 +235,17 @@ header nav ul li a {
     justify-content: center;
 }
 
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonials h2 {
+    color: white;
+}
+
 .testimonial {
     width: 600px;
     background-color: white;
@@ -242,6 +253,42 @@ header nav ul li a {
     border-radius: 20px;
 
     display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.testimonial img {
+    border-radius: 10px;
+}
+
+.testimonial .content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.testimonials .testimonial-control-container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.testimonials .testimonial-control-container .dots {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.dots div {
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    background-color: white;
+}
+
+.dots div.current {
+    background-color: var(--secondary-color);
+    border: 2px solid white;
 }
 
 /*  contact  ------------ contact ------------------- contact -------------- contact ---------------  */
