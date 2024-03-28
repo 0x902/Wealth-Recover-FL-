@@ -1,5 +1,5 @@
 .block {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -13,9 +13,8 @@ a.selected {
 }
 
 h1 {
-    font-size: 48px;
-    font-weight: 700;
-    
+    font-size: 36px;
+    font-weight: 600;
 }
 
 h2 {
@@ -28,8 +27,8 @@ h3 {
     font-weight: 500;
 }
 
-
-.btn, button {
+.btn,
+button {
     border: none;
     outline: none;
     width: max-content;
@@ -55,11 +54,12 @@ h3 {
     border-left: 8px solid var(--secondary-color);
 }
 
-input, textarea {
+input,
+textarea {
     outline: none;
     border: none;
     padding: 14px 0;
-    font-size: 18px;
+    font-size: 16px;
     font-family: inherit;
     border-bottom: 2px solid var(--light);
 }
@@ -70,7 +70,8 @@ textarea {
     resize: none;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-bottom: 2px solid black;
 }
 
