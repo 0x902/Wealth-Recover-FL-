@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Wealth Recover</title>
+        <title>Wealth Recover &mdash; Home</title>
 
         <link rel="stylesheet" href="components.css" />
         <link rel="stylesheet" href="style.css" />
@@ -21,7 +21,9 @@
                                 <a class="selected" href="/">Home</a>
                             </li>
                             <li>
-                                <a href="#what-is-unclaimed-property">What is unclaimed propery?</a>
+                                <a href="#what-is-unclaimed-property"
+                                    >What is unclaimed propery?</a
+                                >
                             </li>
                             <li>
                                 <a href="#what-we-do">What we do</a>
@@ -34,30 +36,52 @@
                             </li>
                         </ul>
                     </nav>
-                    <button onclick="toggleMenu()" id="menu-btn">
-                        <img src="img/menu.png">
+                    <button onclick="toggleMenu()" class="menu-btn">
+                        <img src="img/menu.png" />
                     </button>
                 </header>
-
                 <div id="mobile-menu">
                     <menu>
-                        <button id="close-menu-btn">
-                            <img src="img/close.png">
+                        <button
+                            onclick="toggleMenu()"
+                            class="menu-btn close-menu-btn"
+                        >
+                            <img src="img/close.png" />
                         </button>
+                        <ul>
+                            <li>
+                                <a href="/">Home</a>
+                            </li>
+                            <li>
+                                <a href="#what-is-unclaimed-property"
+                                    >What is unclaimed propery?</a
+                                >
+                            </li>
+                            <li>
+                                <a href="#what-we-do">What we do</a>
+                            </li>
+                            <li>
+                                <a href="#staff">Meet the staff</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact us</a>
+                            </li>
+                        </ul>
                     </menu>
                 </div>
             </div>
             <main class="hero block">
                 <h1>
-                    Near <span class="text-highlight">12 Billion dollars</span> in property is owed to past and
-                    present California residents.
+                    Near
+                    <span class="text-highlight">12 Billion dollars</span> in
+                    property is owed to past and present California residents.
                 </h1>
                 <p>
                     If you are one of these people that is owed money, this is
                     not money that you need to earn this is money that is
                     rightfully yours simply to claim.
                 </p>
-                <a  href="#contact" class="btn btn-primary">Get Started</a>
+                <a href="#contact" class="btn btn-primary">Get Started</a>
             </main>
         </section>
 
@@ -174,7 +198,7 @@
         <section id="what-we-do" class="section-04 block">
             <img src="img/section-4.png" alt="section 04 image" />
             <div class="content">
-                <h2 >What do we do?</h2>
+                <h2>What do we do?</h2>
                 <p>
                     We specialize in reclaiming lost financial resources for
                     individuals and businesses. In our asset recovery process,
@@ -183,7 +207,7 @@
                     assets, file claims on your behalf, and facilitate their
                     seamless transfer to you.
                 </p>
-                <a  href="#contact" class="btn btn-secondary">Get in touch</a>
+                <a href="#contact" class="btn btn-secondary">Get in touch</a>
             </div>
         </section>
 
@@ -236,10 +260,14 @@
             <div class="testimonials block">
                 <h2>Client testimonials</h2>
                 <article class="testimonial">
-                    <img src="img/client-face.png" alt="client face" />
+                    <img
+                        id="testimonial-image"
+                        src="img/user-1.png"
+                        alt="client face"
+                    />
                     <div class="content">
-                        <h4>Lein Hart</h4>
-                        <p>
+                        <h4 id="testimonial-user">John Boyd</h4>
+                        <p id="testimonial-review">
                             Helped locate assets I didn't even know existed and
                             handled the entire process seamlessly. Highly
                             recommend their services!
@@ -247,21 +275,23 @@
                     </div>
                 </article>
                 <div class="testimonial-control-container">
-                    <img height="25" src="img/left-arrow.png" />
-                    <div class="dots">
-                        <div class="current"></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                    <img height="25" src="img/right-arrow.png" />
+                    <img
+                        class="prev-testimonial-btn"
+                        height="25"
+                        src="img/left-arrow.png"
+                    />
+                    <div class="dots"></div>
+                    <img
+                        class="next-testimonial-btn"
+                        height="25"
+                        src="img/right-arrow.png"
+                    />
                 </div>
             </div>
         </section>
 
         <section id="contact" class="section-contact block">
-            <form >
+            <form action="https://formspree.io/f/xzbnjvpo" method="post">
                 <h2>Contact us</h2>
                 <div class="input-container">
                     <label for="name"
@@ -270,7 +300,8 @@
                     <input
                         autocomplete="off"
                         type="text"
-                        name="name"
+                        name="Full Name"
+                        required
                         id="name"
                         placeholder="Your fullname"
                     />
@@ -282,8 +313,9 @@
                     <input
                         autocomplete="off"
                         type="email"
-                        name="email"
+                        name="Email Address"
                         id="email"
+                        required
                         placeholder="Your email address"
                     />
                 </div>
@@ -292,7 +324,7 @@
                     <input
                         autocomplete="off"
                         type="number"
-                        name="phone"
+                        name="Phone Number"
                         id="phone"
                         placeholder="Your phone number"
                     />
@@ -303,7 +335,8 @@
                     >
                     <textarea
                         autocomplete="off"
-                        name="message"
+                        name="Message"
+                        required
                         id="message"
                         cols="30"
                         rows="1"
@@ -317,7 +350,6 @@
             <img src="img/contact.jpg" alt="contact us image" />
         </section>
 
-        
         <div class="footer-container">
             <footer class="block">
                 <a class="footer-logo" href="/">
@@ -329,7 +361,9 @@
                         <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="#what-is-unclaimed-property">What is unclaimed propery?</a>
+                        <a href="#what-is-unclaimed-property"
+                            >What is unclaimed propery?</a
+                        >
                     </li>
                     <li>
                         <a href="#what-we-do">What we do</a>
@@ -372,7 +406,7 @@
         </div>
 
         <a title="go to top" class="btn go-to-top" href="#">
-            <img src="img/up-arrow.png" alt="arrow top">
+            <img src="img/up-arrow.png" alt="arrow top" />
         </a>
 
         <script src="script.js"></script>

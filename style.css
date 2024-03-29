@@ -4,6 +4,7 @@
 :root {
     --primary-color: #001133;
     --secondary-color: #28a74d;
+    --secondary-dark-color: rgb(20, 102, 43);
     /* --border-radius: 20px; */
     --light: rgb(240, 240, 240);
 }
@@ -71,16 +72,17 @@ header nav ul li a {
     opacity: 0.75;
 }
 
-header #menu-btn {
+.menu-btn {
     width: 55px;
     height: 55px;
+    border-radius: 100px;
     background-color: transparent;
     padding: 10px;
 
     display: none;
 }
 
-#menu-btn img {
+.menu-btn img {
     width: 100%;
 }
 
@@ -89,13 +91,41 @@ header #menu-btn {
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
-    background-color: #000d27;
+    left: 90px;
+    padding: 35px;
+    background-color: rgba(0, 13, 39, 0.95);
+    border-left: 7px solid var(--secondary-color);
+    box-shadow: -20px 0 70px rgba(000, 000, 000, 0.5);
 
-    transform: translateX(120%);
+    display: flex;
+    align-items: center;
+
     z-index: 998;
+    transform: translateX(120%);
+    opacity: 0;
+    transition: 0.3s ease;
+}
 
-    transition: .5s ease;
+#mobile-menu menu {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#mobile-menu .close-menu-btn {
+    border: 2px solid white;
+}
+
+#mobile-menu menu ul {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 30px;
+    font-size: 20px;
+}
+
+#mobile-menu menu ul li a {
+    color: white;
 }
 
 /*  Hero  ------------ Hero ------------------- Hero -------------- Hero ---------------  */
@@ -288,7 +318,7 @@ header #menu-btn {
     background-repeat: no-repeat;
     background-size: cover;
 
-    padding: 100px 0;
+    padding: 50px 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -306,7 +336,7 @@ header #menu-btn {
 }
 
 .testimonial {
-    max-width: 55%;
+    max-width: 65%;
     background-color: white;
     padding: 20px;
     /* border-radius: 20px; */
@@ -332,6 +362,11 @@ header #menu-btn {
     align-items: center;
 }
 
+.prev-testimonial-btn,
+.next-testimonial-btn {
+    cursor: pointer;
+}
+
 .testimonials .testimonial-control-container .dots {
     display: flex;
     gap: 10px;
@@ -342,12 +377,14 @@ header #menu-btn {
     width: 10px;
     height: 10px;
     border-radius: 100px;
-    background-color: rgba(255, 255, 255, .85);
+    background-color: rgba(255, 255, 255, 0.85);
+
+    transition: all 0.3s ease-in-out;
 }
 
 .dots div.current {
     background-color: var(--secondary-color);
-    border: 2px solid rgba(255, 255, 255, .5);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     width: 12px;
     height: 12px;
 }
@@ -376,8 +413,6 @@ header #menu-btn {
     gap: 5px;
 }
 
-
-
 .section-contact img {
     width: 100%;
     height: 100%;
@@ -399,7 +434,7 @@ h2 {
     background-repeat: no-repeat;
     background-size: cover;
 
-    border-bottom: 5px solid var(--secondary-color);
+    border-bottom: 10px solid var(--secondary-dark-color);
     padding: 80px 0;
 }
 
@@ -427,7 +462,6 @@ footer ul li a {
     font-weight: 300;
 }
 
-
 .go-to-top {
     width: 65px;
     height: 65px;
@@ -438,15 +472,17 @@ footer ul li a {
     align-items: center;
     justify-content: center;
 
-    background-color: var(--light);
+    background-color: var(--light) !important;
     border-radius: 100px;
-    border: 1px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
 
     position: fixed;
     right: 20px;
     bottom: 20px;
 
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+        rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+        rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
 .go-to-top img {
@@ -454,7 +490,6 @@ footer ul li a {
 }
 
 @media only screen and (max-width: 1060px) {
-
     .block {
         max-width: unset;
         margin: 0 auto;
@@ -467,20 +502,19 @@ footer ul li a {
         padding: 10px 20px;
     }
 
-    header nav{
+    header nav {
         display: none;
     }
 
-    header #menu-btn {
+    .menu-btn {
         display: flex;
     }
-
 
     /*  Hero  ------------ Hero ------------------- Hero -------------- Hero ---------------  */
 
     .hero {
         flex: 1;
-    
+
         display: flex;
         flex-direction: column;
         gap: 30px;
@@ -495,7 +529,6 @@ footer ul li a {
         max-width: 65%;
         font-size: 18px;
     }
-
 
     /*  section01  ------------ section01 ------------------- section01 -------------- section01 ---------------  */
 
@@ -512,7 +545,6 @@ footer ul li a {
         object-fit: cover;
     }
 
-
     /*  section02  ------------ section02 ------------------- section02 -------------- section02 ---------------  */
 
     .section-02 img {
@@ -520,7 +552,6 @@ footer ul li a {
         width: 100%;
         object-fit: cover;
     }
-
 
     /*  section03  ------------ section03 ------------------- section03 -------------- section03 ---------------  */
 
@@ -539,8 +570,6 @@ footer ul li a {
         align-items: start;
     }
 
-
-
     /*  section04  ------------ section04 ------------------- section04 -------------- section04 ---------------  */
 
     .section-04 {
@@ -552,7 +581,7 @@ footer ul li a {
         justify-self: end;
         max-height: 300px;
     }
-    
+
     /*  staff  ------------ staff ------------------- staff -------------- staff ---------------  */
     .section-staff {
         grid-template-columns: 1fr 1fr 1fr;
@@ -584,7 +613,6 @@ footer ul li a {
         padding: 50px 0;
         margin-bottom: 70px;
     }
-
 
     .testimonial {
         max-width: 75%;
@@ -620,11 +648,10 @@ footer ul li a {
         padding: 50px;
         /* border-radius: 10px; */
         box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-
     }
 
     .section-contact img {
-       display: none;
+        display: none;
     }
 
     .section-contact .phone-input,
@@ -656,12 +683,9 @@ footer ul li a {
     footer ul li {
         margin-bottom: 15px;
     }
-
-
 }
 
 @media only screen and (max-width: 600px) {
-
     .block {
         max-width: unset;
         margin: 0 auto;
@@ -672,39 +696,37 @@ footer ul li a {
         width: 100%;
     }
 
-
     /* Header ------------Header-------------------Header--------------Header---------------  */
 
     header {
         padding: 10px 20px;
     }
 
-    header nav{
+    header nav {
         display: none;
     }
 
-    header #menu-btn {
+    .menu-btn {
         display: flex;
     }
-
 
     /*  Hero  ------------ Hero ------------------- Hero -------------- Hero ---------------  */
 
     .hero {
         flex: 1;
-    
+
         display: flex;
         flex-direction: column;
         justify-content: center;
         gap: 30px;
         padding: 50px 20px;
     }
-    
+
     .hero h1 {
         max-width: unset;
         text-align: center;
     }
-    
+
     .hero p {
         max-width: unset;
         font-size: 18px;
@@ -714,7 +736,6 @@ footer ul li a {
     .hero .btn {
         margin: 0 auto;
     }
-
 
     /* Section commons */
     .section-01,
@@ -737,15 +758,12 @@ footer ul li a {
         text-align: center;
         gap: 20px;
     }
-    
-
 
     /*  section01  ------------ section01 ------------------- section01 -------------- section01 ---------------  */
 
     .section-01 img {
         width: 100%;
     }
-
 
     /*  section02  ------------ section02 ------------------- section02 -------------- section02 ---------------  */
 
@@ -754,12 +772,10 @@ footer ul li a {
         order: unset;
     }
 
-
     /*  section03  ------------ section03 ------------------- section03 -------------- section03 ---------------  */
     .section-03 {
         margin-bottom: 90px;
     }
-
 
     .head {
         padding: 28px;
@@ -784,7 +800,6 @@ footer ul li a {
     .body div p {
         font-weight: 300;
     }
-
 
     /*  section04  ------------ section04 ------------------- section04 -------------- section04 ---------------  */
 
@@ -815,7 +830,6 @@ footer ul li a {
         margin-bottom: 90px;
         gap: 10px;
     }
-
 
     .staff .staff-info {
         position: absolute;
@@ -882,7 +896,6 @@ footer ul li a {
         gap: 5px;
     }
 
-
     /*  contact  ------------ contact ------------------- contact -------------- contact ---------------  */
 
     .section-contact {
@@ -899,11 +912,10 @@ footer ul li a {
         padding: 20px;
         /* border-radius: 10px; */
         box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-
     }
 
     .section-contact img {
-       display: none;
+        display: none;
     }
 
     .section-contact .phone-input,
@@ -945,6 +957,4 @@ footer ul li a {
         right: 12px;
         bottom: 12px;
     }
-
 }
-  
