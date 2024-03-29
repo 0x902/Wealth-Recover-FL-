@@ -4,7 +4,7 @@
 :root {
     --primary-color: #001133;
     --secondary-color: #28a74d;
-    --border-radius: 20px;
+    /* --border-radius: 20px; */
     --light: rgb(240, 240, 240);
 }
 
@@ -15,8 +15,30 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    color: white;
+    background-color: var(--secondary-color);
+}
 body {
     font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: whitesmoke;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-color);
+    cursor: pointer;
 }
 
 /* Header ------------Header-------------------Header--------------Header---------------  */
@@ -47,6 +69,33 @@ header nav ul {
 header nav ul li a {
     color: white;
     opacity: 0.75;
+}
+
+header #menu-btn {
+    width: 55px;
+    height: 55px;
+    background-color: transparent;
+    padding: 10px;
+
+    display: none;
+}
+
+#menu-btn img {
+    width: 100%;
+}
+
+#mobile-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000d27;
+
+    transform: translateX(120%);
+    z-index: 998;
+
+    transition: .5s ease;
 }
 
 /*  Hero  ------------ Hero ------------------- Hero -------------- Hero ---------------  */
@@ -82,14 +131,14 @@ header nav ul li a {
     opacity: 0.85;
 }
 
-/* Secrion commons */
+/* Section commons */
 .section-01,
 .section-02,
 .section-04 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    gap: 70px;
+    gap: 40px;
 
     margin-bottom: 100px;
 }
@@ -127,11 +176,18 @@ header nav ul li a {
     border-collapse: collapse;
 }
 
+.table {
+    /* border-radius: 20px; */
+}
+
 .head {
     padding: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+
+    /* border-radius: 20px 20px 0 0; */
 }
 
 .body {
@@ -139,6 +195,8 @@ header nav ul li a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 30px;
+
+    /* border-radius: 0 0 20px 20px ; */
 }
 
 .body div {
@@ -184,6 +242,7 @@ header nav ul li a {
 .staff img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 }
 
 .staff .staff-info {
@@ -200,26 +259,26 @@ header nav ul li a {
 .section-staff div:first-child {
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 20px;
 
     justify-content: center;
     gap: 10px;
 }
 
 .section-staff .staff:nth-child(2) img {
-    border-radius: 20px 0 0 0;
+    /* border-radius: 20px 0 0 0; */
 }
 
 .section-staff .staff:nth-child(4) img {
-    border-radius: 0 20px 20px 0;
+    /* border-radius: 0 20px 20px 0; */
 }
 
 .section-staff .staff:nth-child(5) img {
-    border-radius: 20px 0 0 20px;
+    /* border-radius: 20px 0 0 20px; */
 }
 
 .section-staff .staff:last-child img {
-    border-radius: 0 0 20px 0;
+    /* border-radius: 0 0 20px 0; */
 }
 
 /*  testimonials  ------------ testimonials ------------------- testimonials -------------- testimonials ---------------  */
@@ -247,10 +306,10 @@ header nav ul li a {
 }
 
 .testimonial {
-    width: 600px;
+    max-width: 55%;
     background-color: white;
     padding: 20px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
 
     display: flex;
     align-items: center;
@@ -258,7 +317,7 @@ header nav ul li a {
 }
 
 .testimonial img {
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 
 .testimonial .content {
@@ -283,12 +342,14 @@ header nav ul li a {
     width: 10px;
     height: 10px;
     border-radius: 100px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .85);
 }
 
 .dots div.current {
     background-color: var(--secondary-color);
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, .5);
+    width: 12px;
+    height: 12px;
 }
 
 /*  contact  ------------ contact ------------------- contact -------------- contact ---------------  */
@@ -297,7 +358,7 @@ header nav ul li a {
     display: grid;
     grid-template-columns: 2fr 1fr;
     box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    border-radius: 20px;
+    /* border-radius: 20px; */
 
     margin-bottom: 100px;
 }
@@ -315,15 +376,13 @@ header nav ul li a {
     gap: 5px;
 }
 
-.section-contact form button {
-    width: 100%;
-}
+
 
 .section-contact img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 0 20px 20px 0;
+    /* border-radius: 0 20px 20px 0; */
 }
 
 .section-contact .phone-input,
@@ -341,11 +400,10 @@ h2 {
     background-size: cover;
 
     border-bottom: 5px solid var(--secondary-color);
+    padding: 80px 0;
 }
 
 footer {
-    padding: 80px 0;
-
     display: flex;
     justify-content: space-between;
 }
@@ -366,4 +424,527 @@ footer ul li {
 footer ul li a {
     color: white;
     opacity: 0.85;
+    font-weight: 300;
 }
+
+
+.go-to-top {
+    width: 65px;
+    height: 65px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--light);
+    border-radius: 100px;
+    border: 1px solid var(--primary-color);
+
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.go-to-top img {
+    width: 100%;
+}
+
+@media only screen and (max-width: 1060px) {
+
+    .block {
+        max-width: unset;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Header ------------Header-------------------Header--------------Header---------------  */
+
+    header {
+        padding: 10px 20px;
+    }
+
+    header nav{
+        display: none;
+    }
+
+    header #menu-btn {
+        display: flex;
+    }
+
+
+    /*  Hero  ------------ Hero ------------------- Hero -------------- Hero ---------------  */
+
+    .hero {
+        flex: 1;
+    
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        max-width: 80%;
+    }
+
+    .hero p {
+        max-width: 65%;
+        font-size: 18px;
+    }
+
+
+    /*  section01  ------------ section01 ------------------- section01 -------------- section01 ---------------  */
+
+    /* Section commons */
+    .section-01,
+    .section-02,
+    .section-04 {
+        margin-bottom: 100px;
+    }
+
+    .section-01 img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+
+    /*  section02  ------------ section02 ------------------- section02 -------------- section02 ---------------  */
+
+    .section-02 img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+
+    /*  section03  ------------ section03 ------------------- section03 -------------- section03 ---------------  */
+
+    .section-03 {
+        margin-bottom: 100px;
+    }
+
+    .head {
+        padding: 28px;
+    }
+
+    .body {
+        padding: 40px;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+
+
+    /*  section04  ------------ section04 ------------------- section04 -------------- section04 ---------------  */
+
+    .section-04 {
+        gap: 50px;
+        justify-items: center;
+    }
+
+    .section-04 img {
+        justify-self: end;
+        max-height: 300px;
+    }
+    
+    /*  staff  ------------ staff ------------------- staff -------------- staff ---------------  */
+    .section-staff {
+        grid-template-columns: 1fr 1fr 1fr;
+        margin-bottom: 70px;
+    }
+
+    .section-staff .staff:nth-child(2) img {
+        /* border-radius: 20px 0 0 0; */
+    }
+
+    .section-staff .staff:nth-child(3) img {
+        /* border-radius: 0 20px 0 0; */
+    }
+
+    .section-staff .staff:nth-child(4) img {
+        /* border-radius: 20px 0 0 20px; */
+    }
+
+    .section-staff .staff:nth-child(5) img {
+        /* border-radius: 0; */
+    }
+
+    .section-staff .staff:last-child img {
+        /* border-radius: 0 0 20px 0; */
+    }
+
+    /*  testimonials  ------------ testimonials ------------------- testimonials -------------- testimonials ---------------  */
+    .section-testimonials {
+        padding: 50px 0;
+        margin-bottom: 70px;
+    }
+
+
+    .testimonial {
+        max-width: 75%;
+        /* border-radius: 60px; */
+        padding: 12px;
+    }
+
+    .testimonial img {
+        /* border-radius: 10px; */
+        width: 100px;
+        height: 200px;
+        object-fit: cover;
+        /* border-radius: 100px; */
+    }
+
+    .testimonial .content {
+        gap: 5px;
+    }
+
+    /*  contact  ------------ contact ------------------- contact -------------- contact ---------------  */
+
+    .section-contact {
+        grid-template-columns: 1fr;
+        /* border-radius: 10px; */
+        margin-bottom: 50px;
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    .section-contact form {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 50px;
+        /* border-radius: 10px; */
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+    }
+
+    .section-contact img {
+       display: none;
+    }
+
+    .section-contact .phone-input,
+    .message-input,
+    h2 {
+        grid-column: unset;
+    }
+
+    /*  footer  ------------ footer ------------------- footer -------------- footer ---------------  */
+
+    .footer-container {
+        padding: 50px 0;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+
+    .footer-logo {
+        grid-column: span 2;
+    }
+
+    footer ul h4 {
+        margin-bottom: 10px;
+    }
+
+    footer ul li {
+        margin-bottom: 15px;
+    }
+
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .block {
+        max-width: unset;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+
+    /* Header ------------Header-------------------Header--------------Header---------------  */
+
+    header {
+        padding: 10px 20px;
+    }
+
+    header nav{
+        display: none;
+    }
+
+    header #menu-btn {
+        display: flex;
+    }
+
+
+    /*  Hero  ------------ Hero ------------------- Hero -------------- Hero ---------------  */
+
+    .hero {
+        flex: 1;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+        padding: 50px 20px;
+    }
+    
+    .hero h1 {
+        max-width: unset;
+        text-align: center;
+    }
+    
+    .hero p {
+        max-width: unset;
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .hero .btn {
+        margin: 0 auto;
+    }
+
+
+    /* Section commons */
+    .section-01,
+    .section-02,
+    .section-04 {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: center;
+        gap: 30px;
+
+        margin-bottom: 90px;
+    }
+
+    .section-01 .content,
+    .section-02 .content,
+    .section-04 .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    
+
+
+    /*  section01  ------------ section01 ------------------- section01 -------------- section01 ---------------  */
+
+    .section-01 img {
+        width: 100%;
+    }
+
+
+    /*  section02  ------------ section02 ------------------- section02 -------------- section02 ---------------  */
+
+    .section-02 img {
+        width: 100%;
+        order: unset;
+    }
+
+
+    /*  section03  ------------ section03 ------------------- section03 -------------- section03 ---------------  */
+    .section-03 {
+        margin-bottom: 90px;
+    }
+
+
+    .head {
+        padding: 28px;
+    }
+
+    .body {
+        padding: 28px;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .body div {
+        gap: 5px;
+        border-bottom: 2px solid var(--light);
+        padding-bottom: 25px;
+    }
+
+    .body div:last-child {
+        border-bottom: none;
+    }
+
+    .body div p {
+        font-weight: 300;
+    }
+
+
+    /*  section04  ------------ section04 ------------------- section04 -------------- section04 ---------------  */
+
+    .section-04 {
+        gap: 20px;
+        justify-items: center;
+    }
+
+    .section-04 img {
+        justify-self: center;
+        margin-right: -30px;
+        max-height: 300px;
+    }
+
+    .section-04 .content p {
+        max-width: unset;
+        text-align: center;
+    }
+
+    .section-04 .btn {
+        width: max-content;
+    }
+
+    /*  staff  ------------ staff ------------------- staff -------------- staff ---------------  */
+
+    .section-staff {
+        grid-template-columns: 1fr 1fr;
+        margin-bottom: 90px;
+        gap: 10px;
+    }
+
+
+    .staff .staff-info {
+        position: absolute;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .staff .staff-info h3 {
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .staff .staff-info p {
+        font-size: 14px;
+    }
+
+    .section-staff div:first-child {
+        padding: 15px;
+        border: 2px solid var(--light);
+        /* border-radius: 10px 0 0 0 ; */
+    }
+
+    .section-staff .staff:nth-child(2) img {
+        /* border-radius: 0 !important; */
+    }
+
+    .section-staff .staff:nth-child(4) img {
+        /* border-radius: 0 0 0 10px !important; */
+    }
+
+    .section-staff .staff:nth-child(5) img {
+        /* border-radius: 0 0 0 20px; */
+    }
+
+    .section-staff .staff:last-child img {
+        /* border-radius: 0 0 20px 0; */
+    }
+
+    /*  testimonials  ------------ testimonials ------------------- testimonials -------------- testimonials ---------------  */
+    .section-testimonials {
+        padding: 50px 0;
+        margin-bottom: 50px;
+    }
+
+    .testimonials {
+        gap: 20px;
+    }
+
+    .testimonial {
+        max-width: unset;
+        /* border-radius: 60px; */
+        padding: 12px;
+    }
+
+    .testimonial img {
+        /* border-radius: 10px; */
+        width: 100px;
+        height: 200px;
+        object-fit: cover;
+        /* border-radius: 100px; */
+    }
+
+    .testimonial .content {
+        gap: 5px;
+    }
+
+
+    /*  contact  ------------ contact ------------------- contact -------------- contact ---------------  */
+
+    .section-contact {
+        grid-template-columns: 1fr;
+        /* border-radius: 10px; */
+        margin-bottom: 50px;
+        padding: 20px;
+        box-shadow: none;
+    }
+
+    .section-contact form {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 20px;
+        /* border-radius: 10px; */
+        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+    }
+
+    .section-contact img {
+       display: none;
+    }
+
+    .section-contact .phone-input,
+    .message-input,
+    h2 {
+        grid-column: unset;
+    }
+
+    /*  footer  ------------ footer ------------------- footer -------------- footer ---------------  */
+
+    .footer-container {
+        padding: 50px 0;
+    }
+
+    footer {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        row-gap: 30px;
+        column-gap: 15px;
+    }
+
+    .footer-logo {
+        grid-column: span 2;
+    }
+
+    footer ul h4 {
+        margin-bottom: 10px;
+    }
+
+    footer ul li {
+        margin-bottom: 15px;
+    }
+
+    .go-to-top {
+        width: 45px;
+        height: 45px;
+        padding: 10px;
+
+        right: 12px;
+        bottom: 12px;
+    }
+
+}
+  

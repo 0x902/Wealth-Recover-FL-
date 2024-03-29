@@ -18,27 +18,38 @@
                     <nav>
                         <ul>
                             <li>
-                                <a class="selected" href="#">Home</a>
+                                <a class="selected" href="/">Home</a>
                             </li>
                             <li>
-                                <a href="#">What is unclaimed propery?</a>
+                                <a href="#what-is-unclaimed-property">What is unclaimed propery?</a>
                             </li>
                             <li>
-                                <a href="#">What we do</a>
+                                <a href="#what-we-do">What we do</a>
                             </li>
                             <li>
-                                <a href="#">Meet the staff</a>
+                                <a href="#staff">Meet the staff</a>
                             </li>
                             <li>
-                                <a href="#">Contact us</a>
+                                <a href="#contact">Contact us</a>
                             </li>
                         </ul>
                     </nav>
+                    <button onclick="toggleMenu()" id="menu-btn">
+                        <img src="img/menu.png">
+                    </button>
                 </header>
+
+                <div id="mobile-menu">
+                    <menu>
+                        <button id="close-menu-btn">
+                            <img src="img/close.png">
+                        </button>
+                    </menu>
+                </div>
             </div>
             <main class="hero block">
                 <h1>
-                    Near 12 Billion dollars in property is owed to past and
+                    Near <span class="text-highlight">12 Billion dollars</span> in property is owed to past and
                     present California residents.
                 </h1>
                 <p>
@@ -46,11 +57,11 @@
                     not money that you need to earn this is money that is
                     rightfully yours simply to claim.
                 </p>
-                <a href="#" class="btn btn-primary">Get Started</a>
+                <a  href="#contact" class="btn btn-primary">Get Started</a>
             </main>
         </section>
 
-        <section class="section-01 block">
+        <section id="what-is-unclaimed-property" class="section-01 block">
             <img src="img/section-1.png" alt="section 01 image" />
 
             <div class="content">
@@ -61,7 +72,7 @@
                     and in some cases heirs. These funds are held by the state
                     of California until they are claimed.
                 </p>
-                <a href="#" class="btn btn-secondary">Learn more</a>
+                <a href="#contact" class="btn btn-secondary">Learn more</a>
             </div>
         </section>
 
@@ -75,7 +86,7 @@
                     activity or contact, the property becomes “unclaimed” and by
                     law must be turned over to the state.
                 </p>
-                <a href="#" class="btn btn-secondary">Learn more</a>
+                <a href="#contact" class="btn btn-secondary">Learn more</a>
             </div>
         </section>
 
@@ -160,10 +171,10 @@
             </div>
         </section>
 
-        <section class="section-04 block">
+        <section id="what-we-do" class="section-04 block">
             <img src="img/section-4.png" alt="section 04 image" />
             <div class="content">
-                <h2>What do we do?</h2>
+                <h2 >What do we do?</h2>
                 <p>
                     We specialize in reclaiming lost financial resources for
                     individuals and businesses. In our asset recovery process,
@@ -172,17 +183,16 @@
                     assets, file claims on your behalf, and facilitate their
                     seamless transfer to you.
                 </p>
-                <a href="#" class="btn btn-secondary">Get in touch</a>
+                <a  href="#contact" class="btn btn-secondary">Get in touch</a>
             </div>
         </section>
 
-        <section class="section-staff block">
+        <section id="staff" class="section-staff block">
             <div>
                 <h3>Meet the staff</h3>
                 <p>
                     We are a team built up of individuals who are passionate
-                    about helping others and love providing a smooth experience
-                    for those looking to recover their financial assets
+                    about helping others.
                 </p>
             </div>
             <div class="staff">
@@ -222,7 +232,7 @@
             </div>
         </section>
 
-        <section class="section-testimonials">
+        <section id="testimonials" class="section-testimonials">
             <div class="testimonials block">
                 <h2>Client testimonials</h2>
                 <article class="testimonial">
@@ -230,10 +240,8 @@
                     <div class="content">
                         <h4>Lein Hart</h4>
                         <p>
-                            They located assets I didn't even know existed and
-                            handled the entire process seamlessly. Thanks to
-                            their expertise, I received a substantial sum that
-                            had been sitting untouched for years. Highly
+                            Helped locate assets I didn't even know existed and
+                            handled the entire process seamlessly. Highly
                             recommend their services!
                         </p>
                     </div>
@@ -252,8 +260,8 @@
             </div>
         </section>
 
-        <section class="section-contact block">
-            <form>
+        <section id="contact" class="section-contact block">
+            <form >
                 <h2>Contact us</h2>
                 <div class="input-container">
                     <label for="name"
@@ -309,34 +317,40 @@
             <img src="img/contact.jpg" alt="contact us image" />
         </section>
 
+        
         <div class="footer-container">
             <footer class="block">
-                <img height="40" src="img/logo.png" alt="site logo" />
+                <a class="footer-logo" href="/">
+                    <img src="img/logo.png" height="40" alt="site logo" />
+                </a>
                 <ul>
                     <h4>Links</h4>
                     <li>
-                        <a href="#">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="#">What is unclaimed propery?</a>
+                        <a href="#what-is-unclaimed-property">What is unclaimed propery?</a>
                     </li>
                     <li>
-                        <a href="#">What we do</a>
+                        <a href="#what-we-do">What we do</a>
                     </li>
                     <li>
-                        <a href="#">Meet the staff</a>
+                        <a href="#testimonials">Client testimonials</a>
                     </li>
                     <li>
-                        <a href="#">Contact us</a>
+                        <a href="#staff">Meet the staff</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact us</a>
                     </li>
                 </ul>
                 <ul>
                     <h4>Reach us</h4>
                     <li>
-                        <a href="#">+1012 3456 789</a>
+                        <a href="tel:+10123456789">+1012 3456 789</a>
                     </li>
                     <li>
-                        <a href="#">demo@gmail.com</a>
+                        <a href="mailto:demo@gmail.com">demo@gmail.com</a>
                     </li>
                     <li>
                         <a href="#"
@@ -348,16 +362,19 @@
                 <ul>
                     <h4>Company</h4>
                     <li>
-                        <a href="#">FAQ</a>
+                        <a href="faq.html">FAQ</a>
                     </li>
                     <li>
-                        <a href="#">Terms & Conditions</a>
-                    </li>
-                    <li>
-                        <a href="#">Blogs</a>
+                        <a href="terms.html">Terms & Conditions</a>
                     </li>
                 </ul>
             </footer>
         </div>
+
+        <a title="go to top" class="btn go-to-top" href="#">
+            <img src="img/up-arrow.png" alt="arrow top">
+        </a>
+
+        <script src="script.js"></script>
     </body>
 </html>
